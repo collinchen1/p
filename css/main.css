@@ -57,7 +57,6 @@ header nav {
   content: "";
   position: absolute;
   height: 2px;
-  width: 0;
   bottom: 0;
   left: 0;
   background-color: #1d4ed8;
@@ -73,7 +72,7 @@ header nav {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  background-color: darkslategrey;
+  background-color: #040019;
   width: 100%;
   height: 100%;
   transform: scaleY(0) skewX(0);
@@ -93,20 +92,20 @@ header nav {
 
 .heading-container {
   max-width: 80%;
-  margin:auto;
+  margin: auto;
   position: relative;
   padding-top: 40px;
 }
 
 footer {
   max-width: 100%;
-  margin:auto;
+  margin: auto;
   border-top: 1px solid #030303;
   margin-top: 40px;
 }
 
 footer ul {
-  list-style:  none;
+  list-style: none;
   text-align: center;
 }
 
@@ -145,6 +144,7 @@ footer ul li a:hover {
   margin-top: 4rem;
   display: flex;
   justify-content: space-between;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .projects .card {
@@ -152,10 +152,11 @@ footer ul li a:hover {
   background-color: #27272a;
   padding: 1rem;
   margin-bottom: 1rem;
+  margin: 0.5rem;
   border: 2px solid transparent;
   border-radius: 15px;
   transition: all 0.3s ease;
-  max-width: none;
+  max-width: 25%;
 }
 
 .projects .card:hover {
@@ -192,6 +193,11 @@ footer ul li a:hover {
 
 .projects .card a:hover {
   color: #1e40af;
+}
+
+.projects .card .content {
+  flex: 1;
+  margin-bottom: 2rem;
 }
 
 .contact {
@@ -239,6 +245,10 @@ footer ul li a:hover {
 .contact .card p {
   color: #fff;
   margin-bottom: 0.75rem;
+}
+
+.contact .card a {
+  text-align: center;
 }
 
 .contact .card p i {
@@ -323,11 +333,20 @@ nav.transparent {
   width: 100%;
 }
 
+.blur {
+  position: absolute;
+  box-shadow: 0 0 1000px 100px #17027e;
+  z-index: -100;
+}
+
 header .container,
 section .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 5rem 2rem;
+  position: relative;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
 }
 
 .header {
@@ -390,7 +409,7 @@ header .image img {
   display: block;
   max-width: 70%;
   height: auto;
-  position: relative; 
+  position: relative;
   z-index: 1;
   margin-top: 100px;
 }
@@ -425,7 +444,7 @@ section .header {
   }
 
   .projects {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .contact {
@@ -436,3 +455,31 @@ section .header {
     grid-template-columns: 1fr 200px;
   }
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/*.projects .card .comforteyes-img {
+  background: url("img/c_eye.jpg") center/cover;
+}
+
+.projects .card .psych-img {
+  background: url("img/ap_p.png") center/cover;
+}
+
+.projects .card {
+  flex: 0 1 calc(50% - 1rem);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  max-width: none;
+}
+
+.projects .card:hover {
+  border-color: #fff;
+}*/

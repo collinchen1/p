@@ -14,74 +14,76 @@
 
 </head>
 
-  <body>
-    <div class="loading-container">
-      <div class="loading-screen">
+<body>
+  <div class="loading-container">
+    <div class="loading-screen">
+    </div>
+  </div>
+
+  <header>
+    <nav class="main-navigation">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="img/logo.png">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li id="link1" class="link"><a href="projects.html">Projects</a></li>
+        <li id="link2" class="link"><a href="contact.html">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="home">
+      <div class="heading-container">
+        <section class="homepage-content">
+          <header class="container">
+            <div class="content">
+              <span class="blur"></span>
+              <span class="blur"></span>
+              <H1>Hi, I'm <span>Collin</span></H1>
+              <p>
+                I'm a high school senior at Kenwood Academy with a passion for technology, aiming to pursue a degree in
+                either
+                Computer Science or Computer Engineering.
+              </p>
+            </div>
+            <div class="image">
+              <img src="img/header.png">
+            </div>
+          </header>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer class="container">
+    <div class="column">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo">
+      </div>
+      <div class="socials">
+        <a href="https://www.youtube.com/" target="_blank"><i class="ri-youtube-line"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-line"></i></a>
+        <a href="https://twitter.com/?lang=en" target="_blank"><i class="ri-twitter-line"></i></a>
       </div>
     </div>
+  </footer>
+  <div class="copyright">
+    &copy; Collin Chen 2023
+  </div>
 
-    <header>
-      <nav class="main-navigation">
-        <div class="nav-logo">
-            <a href="index.html">
-              <img src="img/logo.png">
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li class="link"><a href="index.html">Home</a></li>
-            <li id="link1" class="link"><a href="projects.html">Projects</a></li>
-            <li id="link2" class="link"><a href="contact.html">Contacts</a></li>
-        </ul>
-      </nav>
-    </header>
+</body>
 
-
-    <div data-barba="wrapper">
-      <main data-barba="container" data-barba-namespace="home">
-        <div class="heading-container">
-            <section class="homepage-content">
-                <header class="container">
-                  <div class="content">
-                    <span class="blur"></span>
-                    <span class="blur"></span>
-                    <H1>Hi, I'm <span>Collin</span></H1>
-                    <p>
-                      I'm a high school senior at Kenwood Academy with a passion for technology, aiming to pursue a degree in either
-                      Computer Science or Computer Engineering.
-                    </p>
-                  </div>
-                  <div class="image">
-                    <img src="img/header.png">
-                  </div>
-                </header>
-              </section>
-        </div>
-      </main>
-    </div>
-
-    <footer class="container">
-        <div class="column">
-          <div class="logo">
-            <img src="img/logo.png" alt="Logo">
-          </div>
-          <div class="socials">
-            <a href="#"><i class="ri-youtube-line" style="color: white;"></i></a>
-            <a href="#"><i class="ri-instagram-line" style="color: white;"></i></a>
-            <a href="#"><i class="ri-twitter-line" style="color: white;"></i></a>
-          </div>
-        </div>
-      </footer>
-      <div class="copyright">
-        &copy; Collin Chen 2023
-      </div>
-
-  </body>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@barba/core"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
-  <script src="js/helper.js"></script>
-  <script src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/main.js"></script>
 
 
 </html>
