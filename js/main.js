@@ -4,14 +4,14 @@ const mainNavigation = document.querySelector('.main-navigation')
 
 function pageTransitionIn() {
   return gsap
-    .to(loadingScreen, { duration: .5, scaleY: 1, transformOrigin: 'bottom left'})
+    .to(loadingScreen, { duration: .5, scaleY: 1, transformOrigin: 'bottom left' })
 }
 function pageTransitionOut(container) {
   return gsap
-    .timeline({ delay: 1 }) 
-    .add('start') 
+    .timeline({ delay: .5 })
+    .add('start')
     .to(loadingScreen, {
-      duration: 0.5,
+      duration: 0.25,
       scaleY: 0,
       skewX: 0,
       transformOrigin: 'top left',
@@ -20,18 +20,17 @@ function pageTransitionOut(container) {
     .call(contentAnimation, [container], 'start')
 }
 
-
 function contentAnimation(container) {
   $(container.querySelector('.green-heading-bg')).addClass('show')
   return gsap
     .timeline()
     .from(container.querySelector('.is-animated'), {
-      duration: 0.5,
+      duration: 0.25,
       translateY: 10,
       opacity: 0,
       stagger: 0.4
     })
-    .from(mainNavigation, { duration: .5, translateY: -10, opacity: 0})
+    .from(mainNavigation, { duration: .5, translateY: -10, opacity: 0 })
 }
 
 $(function() {
@@ -51,3 +50,10 @@ $(function() {
   });
 
 });
+
+function delay(n) {
+  n = n || 2000
+  return new Promise(resolve => {
+    setTimeout(resolve, n)
+  })
+}
