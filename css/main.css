@@ -590,7 +590,7 @@ section .header {
   header .container,
   section .container {
     grid-template-columns: 1fr;
-    padding-top: 1rem;
+    padding-top: 2rem;
   }
 
   header .image {
@@ -710,13 +710,13 @@ section .header {
   }
 
   section {
-    padding-top: 3.5rem;
+    padding-top: 5rem;
     padding-bottom: 1.5rem;
     min-height: auto;
   }
 
   header .container {
-    padding-top: 1rem;
+    padding-top: 5rem;
     gap: 1rem;
   }
 
@@ -752,7 +752,7 @@ section .header {
   }
 
   section .container {
-    padding-top: 0;
+    padding-top: 100px;
     gap: 1rem;
   }
 

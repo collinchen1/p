@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Collin Chen - SLC-3 in SystemVerilog</title>
+  <link rel="icon" href="/img/logo1.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="loading-container">
+    <div class="loading-screen"></div>
+  </div>
+
+  <header>
+    <nav class="main-navigation">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="img/logo.png">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li id="link1" class="link"><a href="projects.html">Projects</a></li>
+        <li id="link2" class="link"><a href="contact.html">Contacts</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="about">
+      <div class="heading-container">
+        <section class="container" style="height: auto; min-height: 0; padding-bottom: 3rem;">
+          <br><br>
+          <h2 class="header">SLC-3 in SystemVerilog</h2>
+          <div class="contact">
+            <div class="card">
+              <div class="content">
+                <h3>Overview</h3>
+                <p>This project implements an SLC-3 (a simplified LC-3-style) processor in SystemVerilog. The processor integrates a multi-cycle datapath, control FSM, memory subsystem, and memory-mapped I/O into a working CPU design for simulation and FPGA-oriented synthesis.</p>
+                <p>The top-level design brings together the CPU core, synchronized inputs, memory, and debug displays so programs can be loaded, executed, and observed through LEDs and seven-segment outputs.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <h3>Datapath &amp; Control</h3>
+                <p>The CPU includes core architectural components such as the program counter (PC), instruction register (IR), memory address register (MAR), memory data register (MDR), register file, ALU, and condition-code logic (NZP with branch enable).</p>
+                <p>A finite-state machine in the control unit sequences instruction fetch, decode, and execute phases, generating control signals for register loads, bus gating, ALU operations, address calculation, branching, and memory accesses.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <h3>Instruction &amp; Execution Support</h3>
+                <p>The SystemVerilog implementation supports key SLC-3/LC-3 operations reflected in the design, including arithmetic and logic instructions (ADD, AND, NOT), memory access instructions (LDR, STR), control-flow instructions (BR, JMP, JSR), and related instruction decode/state transitions.</p>
+                <p>Instruction and memory initialization utilities in the project provide encoded test/program contents used to exercise processor behavior during development and verification.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <h3>Memory &amp; I/O Integration</h3>
+                <p>The memory subsystem handles synchronous read/write behavior with multi-cycle wait states and supports both simulation memory and synthesis-oriented RAM initialization/integration. A CPU-to-I/O bridge maps memory-mapped interactions, including reading switch inputs and writing hexadecimal display output at address <code>0xFFFF</code>.</p>
+                <p>Debug visibility is built into the design: instruction/state-related values are routed to LEDs and hex displays (including debug output paths from the CPU), helping validate execution on hardware and in simulation.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <h3>Design Files</h3>
+                <p>Key modules in the project include the SLC-3/core integration, CPU datapath and control logic, register/ALU/NZP components, memory and I/O interfaces, synchronizers/debouncers, and hex display drivers. Together, these SystemVerilog files form a complete processor system used for the lab implementation and report.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer class="container">
+    <div class="column">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo">
+      </div>
+    </div>
+  </footer>
+  <div class="copyright">
+    &copy; Collin Chen 2026
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/main.js"></script>
+
+</html>

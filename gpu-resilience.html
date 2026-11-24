@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Collin Chen - GPU Resilience Analysis</title>
+  <link rel="icon" href="/img/logo1.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="loading-container">
+    <div class="loading-screen"></div>
+  </div>
+
+  <header>
+    <nav class="main-navigation">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="img/logo.png">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li id="link1" class="link"><a href="projects.html">Projects</a></li>
+        <li id="link2" class="link"><a href="contact.html">Contacts</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="about">
+      <div class="heading-container">
+        <section class="container" style="height: auto; min-height: 0; padding-bottom: 3rem;">
+          <br><br>
+          <h2 class="header">GPU Resilience Analysis using Statistical Modeling &amp; LLMs</h2>
+          <div class="contact">
+            <div class="card">
+              <div class="content">
+                <h3>Overview</h3>
+                <p>This project analyzes two years of GPU failure logs from a production HPC cluster (400 NVIDIA A100 GPUs across 100 nodes; 100K+ XID events) to understand failure behavior, reliability, and opportunities for improved diagnosis. The work combines large-scale log analysis, statistical modeling, and LLM-assisted interpretation in Python.</p>
+                <p>The study transforms raw nested logs into structured data, characterizes dominant XID errors, models interarrival and hazard behavior, and explores hybrid statistical + LLM approaches for more interpretable resilience analysis.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <h3>Data Pipelines &amp; Failure Characterization</h3>
+                <p>Built data pipelines with Pandas, NumPy, and SciPy to parse and transform nested log data (pickle to DataFrame), enabling structured coverage of raw logs and efficient time-series querying. Computed statistical metrics (mean, variance, percentiles) and estimated probabilities of critical XID events, identifying dominant error types contributing to a large share of failures.</p>
+                <p>Implemented log deduplication and coalescing algorithms to reduce dataset size while preserving true failure events, and visualized failure patterns with Matplotlib/Seaborn, including log-scale frequency plots and interarrival histograms revealing heavy-tailed and bursty behavior.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <h3>Reliability &amp; Statistical Modeling</h3>
+                <p>Modeled interarrival times of GPU failures and evaluated Exponential, Normal, Uniform, and Lognormal fits using Kolmogorov&ndash;Smirnov tests (p-value threshold 0.05). Identified Poisson-like failure behavior, estimated system failure rate (&lambda;), and derived MTBF estimates for full-cluster workloads.</p>
+                <p>Performed reliability analysis including MTBF, hazard rate, and Nelson&ndash;Aalen cumulative hazard estimation, validating consistency between empirical observations and theoretical models.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <h3>Clustering, Propagation &amp; Probabilistic Inference</h3>
+                <p>Conducted temporal clustering of XID events using a 600-second window, showing that a majority of failures occur in multi-event clusters indicative of correlated error bursts. Built XID propagation models (transition probability matrices) to identify high-probability error sequences for failure diagnosis.</p>
+                <p>Implemented ML and MAP hypothesis testing for interpretable probabilistic classification of XID-induced failures and designed a Naive Bayes model for multi-event clusters to enable scalable inference over unordered XID sets.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="content">
+                <h3>LLM Integration</h3>
+                <p>Integrated a 7B-parameter LLM (Qwen2.5-7B) for log analysis and evaluated its ability to classify and explain XIDs, identifying limitations in domain-specific accuracy without context. Improved response quality and reduced hallucination by augmenting prompts with structured XID documentation through retrieval-based context injection.</p>
+                <p>The project explored hybrid statistical + LLM approaches, demonstrating how probabilistic modeling combined with contextual LLM reasoning can improve the interpretability of system failures.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer class="container">
+    <div class="column">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo">
+      </div>
+    </div>
+  </footer>
+  <div class="copyright">
+    &copy; Collin Chen 2026
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/main.js"></script>
+
+</html>
