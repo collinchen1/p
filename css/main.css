@@ -716,7 +716,7 @@ section .header {
   }
 
   header .container {
-    padding-top: 5rem;
+    padding-top: 1rem;
     gap: 1rem;
   }
 
@@ -752,7 +752,7 @@ section .header {
   }
 
   section .container {
-    padding-top: 100px;
+    padding-top: 0;
     gap: 1rem;
   }
 
